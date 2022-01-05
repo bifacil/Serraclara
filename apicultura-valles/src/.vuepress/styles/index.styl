@@ -1,0 +1,137 @@
+
+$colorSelect = white
+
+.theme-container {
+
+  .navbar {
+    background-color: $colorApp !important;
+    padding-top:0px !important;
+    padding-bottom:0px !important;
+    height:77px !important;
+    padding-top:0px !important;
+    .sidebar-button{
+      color: white !important;
+      top: 1rem !important;
+    }
+    .site-name{
+      display none !important;
+      color: white !important
+    }
+    .logo{
+      top:22px; 
+      left:24px;
+      position:absolute;
+    }
+    .links {
+      display:flex;
+      flex-direction: row-reverse;
+      justify-content:center;
+      pointer-events:none;
+      top:0px;
+      width:100%;
+      margin-top:0px !important;
+      color: white !important;
+      background-color: transparent !important;
+      
+      .search-box{
+        margin-left:auto;
+        margin-top:20px;
+        width:10rem;
+        pointer-events:auto;
+      }
+      .nav-links{
+        pointer-events:auto;
+        .nav-item{
+          margin-top:20px;
+          margin-bottom:20px;
+          top:0px;
+          margin-left: 0.4rem !important;
+          a {
+            text-transform:uppercase !important;
+            padding-bottom:6px !important;
+            padding-left:6px !important;
+            padding-right:6px !important;
+
+          }
+        }
+      }
+
+      .nav-link:hover, .nav-item .router-link-active{
+        border-bottom:2px solid white !important
+        color white !important;
+      }
+    }
+
+    .links::after{
+        content:"xxx"; // https://stackoverflow.com/questions/35250367/center-flex-items-with-one-at-the-end-of-the-row
+        margin: 1px auto 1px 1px;
+        visibility:hidden;
+        width:10rem;
+    }
+  }
+
+  .sidebar{
+    top: 7rem !important;
+
+    .nav-link:hover, .nav-item .router-link-active{
+        color $colorApp !important;
+    }
+
+  }
+
+  .custom-block.tip {
+    border-color: $colorApp !important;
+  }
+
+  @media (max-width: 992px) {
+    .text-nowrap {
+      white-space: normal !important;
+    }
+  }
+
+  @media (max-width: 960px){
+    .navbar{
+      .search-box{
+        visibility: hidden;
+        display:none;
+      }
+      .logo{
+        vertical-align:middle !important;
+        top:inherit !important;
+        left:inherit !important;
+        position:relative !important;
+      }
+    }
+  }
+
+  @media (max-width: 719px){
+    .navbar {
+      .logo{
+        margin-top:20px;
+        margin-bottom:20px; 
+        position:relative;
+      }
+    }
+    .sidebar{
+      top: 4rem !important;
+    }
+  }
+
+  main {
+
+    .theme-default-content {
+      max-width: 940px !important
+      padding-top:5rem !important;
+    }
+
+    .is-style-rounded {
+      border-radius: 9999px !important;
+    }
+    
+  }
+
+}
+
+
+
+  
