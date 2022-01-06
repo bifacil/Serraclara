@@ -1,7 +1,7 @@
 <template>
   <v-app>
     <div class="theme-container" :class="pageClasses">
-      <v-app-bar app dark class="green lighten-2">
+      <v-app-bar app dark class="green darken-4">
         <v-container  fluid>
           <v-row no-gutters>
             <v-col cols="2" class="d-flex justify-start">
@@ -13,12 +13,20 @@
               </v-btn>
             </v-col>
             <v-col cols="2" class="d-flex justify-end">
-              <v-img @click="selectedLang('')" class="mx-1" max-width="30" src="/flags/CAT.png" alt="Catalán" style="cursor: pointer"/>
-              <v-img @click="selectedLang('es')" class="mx-1" max-width="30" src="/flags/SP.png" alt="Español" style="cursor: pointer"/>
+              <v-img @click="selectedLang('')" class="mx-1" max-width="30" src="/flags/SP.png" alt="Español" style="cursor: pointer"/>
+              <v-img @click="selectedLang('cat')" class="mx-1" max-width="30" src="/flags/CAT.png" alt="Catalán" style="cursor: pointer"/>
             </v-col>
           </v-row>
         </v-container>
       </v-app-bar>
+      <sidebar :items="sidebarItems" @toggle-sidebar="toggleSidebar">
+        <template #top>
+          <slot name="sidebar-top" />
+        </template>
+        <template #bottom>
+          <slot name="sidebar-bottom" />
+        </template>
+      </sidebar>
       <page :sidebar-items="sidebarItems">
         <template #top>
           <slot name="page-top" />
@@ -34,28 +42,29 @@
 <script>
 import Home from "@parent-theme/components/Home.vue";
 import Page from "@parent-theme/components/Page.vue";
+import Sidebar from "@parent-theme/components/Sidebar.vue";
 import { resolveSidebarItems } from "@parent-theme/util";
 export default {
-  components: { Home, Page },
+  components: { Home, Page, Sidebar },
   data() {
     return {
       isSidebarOpen: false,
       lang: '',
       links: [
-        {root: '',
+        {root: 'cat',
           routers:[
-            {to:'/', text:'Inici'},
-            {to:'/arboriculture', text:'Arboricultura'},
-            {to:'/blog', text:'Blog'},
-            {to:'/contact', text:'Contacte'},
+            {to:'/cat', text:'Inici'},
+            {to:'/cat/arboriculture', text:'Arboricultura'},
+            {to:'/cat/blog', text:'Blog'},
+            {to:'/cat/contact', text:'Contacte'},
           ]
         },
-        {root: 'es',
+        {root: '',
           routers:[
-            {to:'/es', text:'Inicio'},
-            {to:'/es/arboriculture', text:'Arboricultura'},
-            {to:'/es/blog', text:'Blog'},
-            {to:'/es/contact', text:'Contacto'},
+            {to:'/', text:'Inicio'},
+            {to:'/arboriculture', text:'Arboricultura'},
+            {to:'/blog', text:'Blog'},
+            {to:'/contact', text:'Contacto'},
           ]
         }
       ]
@@ -125,11 +134,15 @@ export default {
       window.localStorage.setItem('lang', lang);
     },
     updatedPath(){
-      let path = this.$route.path.replaceAll('/es', '')
-      if(this.lang === 'es'){
-        path = `/es${path}`
+      let path = this.$route.path.replaceAll('/cat', '')
+      if(this.lang === 'cat'){
+        path = `/cat${path}`
       }
       this.$router.replace(path)
+    },
+    toggleSidebar(to) {
+      this.isSidebarOpen = typeof to === "boolean" ? to : !this.isSidebarOpen;
+      this.$emit("toggle-sidebar", this.isSidebarOpen);
     }
   }
 };

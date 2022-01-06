@@ -1,6 +1,7 @@
 ---
 title: PODA VALLÈS
 lang: ca-ES
+sidebar: auto
 ---
 
 # Poda, tala i plantació d’arbres
