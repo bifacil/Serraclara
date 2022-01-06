@@ -1,6 +1,6 @@
 ---
 title: PODA VALLÈS
-lang: ca-ES
+lang: es-ES
 ---
 
 ## Blog
@@ -14,3 +14,4 @@ description="Per molèsties als veïns ens vàrem penjar de la paret i vàrem re
 '20180329_heura_5c.jpeg',
 '20180329_heura_6c.jpeg']"
 />
+

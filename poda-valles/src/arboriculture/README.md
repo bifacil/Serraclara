@@ -1,3 +1,8 @@
+---
+title: PODA VALLÈS
+lang: ca-ES
+---
+
 ## ARBORICULTURA
 L’ arboricultura és la ciència que compren la selecció, propagació, restauració i tales selectives de plantes perennes i llenyoses, com arbres i arbustos; i l’estudi del seu creixement incloent les pràctiques tradicionals.
 
