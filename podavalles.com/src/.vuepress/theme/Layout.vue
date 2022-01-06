@@ -8,7 +8,7 @@
               <v-toolbar-title class="mx-1">PODA VALLÈS</v-toolbar-title>
             </v-col>
             <v-col cols="8" class="d-flex justify-center">
-              <v-btn :to="router.to" text v-for="(router, i) in routers" :key="i" exact>
+              <v-btn :to="router.to" text v-for="(router, i) in routers" :key="i" :exact="i === 0">
                 {{router.text}}
               </v-btn>
             </v-col>
