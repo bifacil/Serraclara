@@ -9,8 +9,9 @@
   },
   "repository": "/Serraclara",
   "scripts": {
-    "dev": "vuepress dev src",
-    "build": "vuepress build src"
+    "desa": "vuepress dev src",
+    "build": "vuepress build src",
+    "postbuild": "firebase deploy"
   },
   "license": "MIT",
   "devDependencies": {
