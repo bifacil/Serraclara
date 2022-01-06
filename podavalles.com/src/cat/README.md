@@ -1,17 +1,20 @@
 ---
-title: PODA VALLÈS
 lang: ca-ES
 sidebar: auto
 ---
 
+## Inici
+
 # Poda, tala i plantació d’arbres
 
-### Poda en alçada
-### Tala controlada i segura
-### Selecció i plantació d’arbres
-### Perfilat i retallada de tanques
-### Desbrossaments de parcel·les i finques
-### Neteges forestals
+#### Poda en alçada
+#### Tala controlada i segura
+#### Selecció i plantació d’arbres
+#### Perfilat i retallada de tanques
+#### Desbrossaments de parcel·les i finques
+#### Neteges forestals
+
+<br>
 
 ![PODA VALLÈS](/img/prune-1920x1200.jpeg)
 

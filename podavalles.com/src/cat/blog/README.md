@@ -1,5 +1,4 @@
 ---
-title: PODA VALLÈS
 lang: ca-ES
 sidebar: auto
 ---

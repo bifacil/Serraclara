@@ -1,11 +1,11 @@
 <template>
   <v-app>
     <div class="theme-container" :class="pageClasses">
-      <v-app-bar app dark class="green darken-4">
+      <v-app-bar app class="yellow accent-4">
         <v-container  fluid>
           <v-row no-gutters>
             <v-col cols="2" class="d-flex justify-start">
-              <v-toolbar-title class="mx-1">PODA VALLÈS</v-toolbar-title>
+              <v-toolbar-title class="mx-1">APICULTURA VALLÈS</v-toolbar-title>
             </v-col>
             <v-col cols="8" class="d-flex justify-center">
               <v-btn :to="router.to" text v-for="(router, i) in routers" :key="i" :exact="i === 0">
@@ -54,7 +54,7 @@ export default {
         {root: 'cat',
           routers:[
             {to:'/cat', text:'Inici'},
-            {to:'/cat/arboriculture', text:'Arboricultura'},
+            {to:'/cat/services', text:'Serveis'},
             {to:'/cat/blog', text:'Blog'},
             {to:'/cat/contact', text:'Contacte'},
           ]
@@ -62,7 +62,7 @@ export default {
         {root: '',
           routers:[
             {to:'/', text:'Inicio'},
-            {to:'/arboriculture', text:'Arboricultura'},
+            {to:'/services', text:'Servicios'},
             {to:'/blog', text:'Blog'},
             {to:'/contact', text:'Contacto'},
           ]

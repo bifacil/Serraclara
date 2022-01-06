@@ -2,19 +2,15 @@ const { description } = require('../../package')
 
 module.exports = {
   
-  title: 'PODA VALLÈS',
+  title: 'APICULTURA VALLÈS',
   description: description,
   head: [
+    ['link', { rel: "icon", type: "image/png", sizes: "32x32", href: "/img/icons8-abeja-16.png"}],
     ['meta', { name: 'theme-color', content: '#3eaf7c' }],
     ['meta', { name: 'apple-mobile-web-app-capable', content: 'yes' }],
     ['meta', { name: 'apple-mobile-web-app-status-bar-style', content: 'black' }]
   ],
 
-  /**
-   * Theme configuration, here is the default theme configuration for VuePress.
-   *
-   * ref：https://v1.vuepress.vuejs.org/theme/default-theme-config.html
-   */
   themeConfig: {
     search: false,
     smoothScroll: true,
@@ -23,7 +19,6 @@ module.exports = {
     docsDir: '',
     editLinkText: '',
     lastUpdated: false,
-    logo: '/img/logo.png',
     nav: [
       {text: 'Inici',link: '/'},
       {text: 'Servicios',link: '/services/'},

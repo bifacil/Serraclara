@@ -1,9 +1,14 @@
-## Contacte
+---
+lang: es-ES
+sidebar: auto
+---
 
-Ens pot localitzar al numero de telèfon:
+## Contacto
+
+Nos puede localizar en el número de teléfono:
 
 **639 841 851**
 
-Si ho prefereix pot escriure’ns a [info@podavalles.com](mailto:info@podavalles.com) amb el seu nom i telèfon i ens posarem en contacte amb vostè.
+Si lo prefiere puede escribirnos en [info@podavalles.com](mailto:info@podavalles.com) con su nombre y teléfono y nos pondremos en contacto con usted.
 
-<img src="http://arboriculturavalles.com/wp-content/uploads/2018/ubicacio.jpg" alt="Podar" class="is-style-rounded">
+<img src="/img/ubicacio.jpeg" alt="Podar" class="is-style-rounded">
