@@ -1,6 +1,5 @@
 ---
 lang: es-ES
-sidebar: auto
 ---
 
 ## Inicio

@@ -1,6 +1,5 @@
 ---
 lang: ca-ES
-sidebar: auto
 ---
 
 ## Inici

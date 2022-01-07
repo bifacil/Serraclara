@@ -34,7 +34,12 @@
           </v-row>
         </v-container>
       </v-app-bar>
-      <sidebar :items="sidebarItems" @toggle-sidebar="toggleSidebar" v-if="!$vuetify.breakpoint.smAndDown">
+      <v-img app v-if="isHomePage" :height="bannerHeight" src="/img/banner.jpeg" class="banner">
+        <v-footer class="transparent py-5" absolute>
+          <v-chip large class="transparent text-sm-h4 text-md-h2 font-weight-bold" label dark>{{bannerTitle}}</v-chip>
+        </v-footer>
+      </v-img>
+      <sidebar :items="sidebarItems" @toggle-sidebar="toggleSidebar">
         <template #top>
           <slot name="sidebar-top" />
         </template>
@@ -73,7 +78,8 @@ export default {
             {to:'/cat/arboriculture', text:'Arboricultura'},
             {to:'/cat/blog', text:'Blog'},
             {to:'/cat/contact', text:'Contacte'},
-          ]
+          ],
+          banner: 'Especialistes en arbres'
         },
         {root: '',
           routers:[
@@ -81,7 +87,8 @@ export default {
             {to:'/arboriculture', text:'Arboricultura'},
             {to:'/blog', text:'Blog'},
             {to:'/contact', text:'Contacto'},
-          ]
+          ],
+          banner: 'Especialistas en árboles'
         }
       ]
     };
@@ -91,11 +98,18 @@ export default {
       const height =  this.$vuetify.breakpoint.smAndDown && this.drawer ? 200 : 70
       return height
     },
+    bannerHeight(){
+      const height =  this.$vuetify.breakpoint.smAndDown ? 300 : 550
+      return height
+    },
     isHomePage(){
-      return this.$page.path === "/"
+      return this.$page.path === "/" || this.$page.path === "/cat/"
     },
     routers(){
       return this.links.find(l => l.root === this.lang).routers
+    },
+    bannerTitle(){
+      return this.links.find(l => l.root === this.lang).banner
     },
     shouldShowNavbar() {
       const { themeConfig } = this.$site;
@@ -173,3 +187,9 @@ export default {
   }
 };
 </script>
+
+<style lang="scss" scoped>
+  .banner {
+    margin-top: 70px; 
+  }
+</style>
