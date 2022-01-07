@@ -1,11 +1,26 @@
 <template>
   <v-app>
     <div class="theme-container" :class="pageClasses">
-      <v-app-bar app class="yellow accent-4 black--text">
-        <v-container  fluid>
+      <v-app-bar app class="yellow accent-4 black--text" :prominent="drawer" :height="appBarHeight" v-click-outside="onClickClose">
+        <v-app-bar-nav-icon v-if="$vuetify.breakpoint.smAndDown" @click="drawer = !drawer"></v-app-bar-nav-icon>
+        <v-container  fluid v-if="$vuetify.breakpoint.smAndDown">
+          <v-row no-gutters>
+            <v-col cols="12" class="d-flex justify-end">
+              <v-img @click="selectedLang('')" class="mx-1" max-width="30" src="/flags/SP.png" alt="Español" style="cursor: pointer"/>
+              <v-img @click="selectedLang('cat')" class="mx-1" max-width="30" src="/flags/CAT.png" alt="Catalán" style="cursor: pointer"/>
+            </v-col>
+            <v-divider/>
+            <v-col cols="12" v-for="(router, i) in routers" :key="i" class="d-flex justify-start">
+              <v-btn :to="router.to" text  :exact="i === 0" class="black--text" v-if="drawer" @click="onClickClose">
+                {{router.text}}
+              </v-btn>
+            </v-col>
+          </v-row>
+        </v-container>
+        <v-container fluid v-else>
           <v-row no-gutters>
             <v-col cols="2" class="d-flex justify-start">
-              <v-toolbar-title class="mx-1">APICULTURA VALLÈS</v-toolbar-title>
+              <div class="mx-1 title text-no-wrap">APICULTURA VALLÈS</div>
             </v-col>
             <v-col cols="8" class="d-flex justify-center">
               <v-btn :to="router.to" text v-for="(router, i) in routers" :key="i" :exact="i === 0" class="black--text">
@@ -19,7 +34,7 @@
           </v-row>
         </v-container>
       </v-app-bar>
-      <sidebar :items="sidebarItems" @toggle-sidebar="toggleSidebar">
+      <sidebar :items="sidebarItems" @toggle-sidebar="toggleSidebar" v-if="!$vuetify.breakpoint.smAndDown">
         <template #top>
           <slot name="sidebar-top" />
         </template>
@@ -27,7 +42,7 @@
           <slot name="sidebar-bottom" />
         </template>
       </sidebar>
-      <page :sidebar-items="sidebarItems">
+      <page :sidebar-items="sidebarItems" class="text-justify">
         <template #top>
           <slot name="page-top" />
         </template>
@@ -50,6 +65,7 @@ export default {
     return {
       isSidebarOpen: false,
       lang: '',
+      drawer: false,
       links: [
         {root: 'cat',
           routers:[
@@ -71,6 +87,10 @@ export default {
     };
   },
   computed: {
+    appBarHeight(){
+      const height =  this.$vuetify.breakpoint.smAndDown && this.drawer ? 200 : 70
+      return height
+    },
     isHomePage(){
       return this.$page.path === "/"
     },
@@ -144,6 +164,11 @@ export default {
     toggleSidebar(to) {
       this.isSidebarOpen = typeof to === "boolean" ? to : !this.isSidebarOpen;
       this.$emit("toggle-sidebar", this.isSidebarOpen);
+    },
+    onClickClose(){
+      if(this.drawer){
+        this.drawer = false
+      }
     }
   }
 };
