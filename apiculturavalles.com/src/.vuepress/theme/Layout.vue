@@ -1,14 +1,14 @@
 <template>
   <v-app>
     <div class="theme-container" :class="pageClasses">
-      <v-app-bar app class="yellow accent-4">
+      <v-app-bar app class="yellow accent-4 black--text">
         <v-container  fluid>
           <v-row no-gutters>
             <v-col cols="2" class="d-flex justify-start">
               <v-toolbar-title class="mx-1">APICULTURA VALLÈS</v-toolbar-title>
             </v-col>
             <v-col cols="8" class="d-flex justify-center">
-              <v-btn :to="router.to" text v-for="(router, i) in routers" :key="i" :exact="i === 0">
+              <v-btn :to="router.to" text v-for="(router, i) in routers" :key="i" :exact="i === 0" class="black--text">
                 {{router.text}}
               </v-btn>
             </v-col>
