@@ -34,11 +34,7 @@
           </v-row>
         </v-container>
       </v-app-bar>
-      <v-img app v-if="isHomePage" :height="bannerHeight" src="/img/banner.jpeg" class="banner">
-        <v-footer class="transparent py-5" absolute>
-          <v-chip large class="transparent text-sm-h4 text-md-h2 font-weight-bold" label dark>{{bannerTitle}}</v-chip>
-        </v-footer>
-      </v-img>
+      <banner :lang="lang" v-if="isHomePage"/>
       <sidebar :items="sidebarItems" @toggle-sidebar="toggleSidebar">
         <template #top>
           <slot name="sidebar-top" />
