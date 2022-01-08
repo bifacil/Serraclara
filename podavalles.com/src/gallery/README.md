@@ -3,7 +3,7 @@ lang: es-ES
 sidebar: auto
 ---
 
-## Blog
+## Galería
 
 ### Trabajos verticales, hiedra en Vallcarca #1
 #### 25 DE NOVIEMBRE DE 2021

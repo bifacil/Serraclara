@@ -3,7 +3,7 @@ lang: ca-ES
 sidebar: auto
 ---
 
-## Blog
+## Galeria
 
 ### Treballs verticals, heura a Vallcarca #1
 #### 25 DE NOVEMBRE DE 2021

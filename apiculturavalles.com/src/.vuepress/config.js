@@ -22,7 +22,7 @@ module.exports = {
     nav: [
       {text: 'Inici',link: '/'},
       {text: 'Servicios',link: '/services/'},
-      {text: 'Blog',link: '/blog/'},
+      {text: 'Galeria',link: '/gallery/'},
       {text: 'Contacte',link: '/contact/'}
     ],
   },

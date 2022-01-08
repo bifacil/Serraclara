@@ -3,7 +3,7 @@ lang: es-ES
 sidebar: auto
 ---
 
-## Blog
+## Galería
 
 ### Enjambre instalado en baúl del jardin
 #### 18 ENERO, 2019

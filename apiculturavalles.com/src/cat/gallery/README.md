@@ -3,7 +3,7 @@ lang: ca-ES
 sidebar: auto
 ---
 
-## Blog
+## Galeria
 
 ### Eixam instal·lat al bagul del jardí
 #### 18 GENER, 2019

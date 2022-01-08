@@ -1,9 +1,11 @@
 ---
 lang: es-ES
-sidebar: auto
 ---
 
 ## Servicios
+
+En Apicultura Vallés somos especialistas en la recogida de enjambras y en la extracción y retirada de colmenas establecidas. No importa la altura ni la colocación.
+
 - Venta de miel y tintura de propóleo.
 - Recogemos enjambras.
 - Extracción de colonias instaladas (especialistas en trabajos verticales).

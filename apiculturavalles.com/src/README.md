@@ -1,19 +1,18 @@
 ---
 lang: es-ES
-sidebar: auto
 ---
 
-## Inicio
+## ¿Qué hacemos?
 
-#### Recogemos enjambras.
-#### Extracción de colonias de abejas
-#### Eliminación de nidos de avispas
-#### Eliminación de avispa asiática
+En Apicultura Vallés somos especialistas en la recogida de enjambras y en la extracción y retirada de colmenas establecidas. No importa la altura ni la colocación.
+
+- **Recogemos enjambras.**
+- **Extracción de colonias de abejas**
+- **Eliminación de nidos de avispas**
+- **Eliminación de avispa asiática**
 
 <br>
 
-En Apicultura Vallés somos especialistas en la recogida de enjambras y en la extracción y retirada de colmenas establecidas. No importa la altura ni la colocación.
- 
 
 En los siete años que empezamos con la aventura apícola nunca hemos dejado de maravillarnos con la organización y estructura de estos insectos alados. Contemplamos la colonia como un único individuo no cómo la casa de cientos de miles. El zángano, pese a su mala reputación, la obrera y la reina trabajan en perfecta armonía bailando una música que aún no hemos conseguido descifrar toda la melodía.
 

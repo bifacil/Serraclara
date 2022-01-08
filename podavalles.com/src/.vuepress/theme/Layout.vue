@@ -72,7 +72,7 @@ export default {
           routers:[
             {to:'/cat', text:'Inici'},
             {to:'/cat/arboriculture', text:'Arboricultura'},
-            {to:'/cat/blog', text:'Blog'},
+            {to:'/cat/gallery', text:'Galeria'},
             {to:'/cat/contact', text:'Contacte'},
           ],
           banner: 'Especialistes en arbres'
@@ -81,7 +81,7 @@ export default {
           routers:[
             {to:'/', text:'Inicio'},
             {to:'/arboriculture', text:'Arboricultura'},
-            {to:'/blog', text:'Blog'},
+            {to:'/gallery', text:'Galería'},
             {to:'/contact', text:'Contacto'},
           ],
           banner: 'Especialistas en árboles'

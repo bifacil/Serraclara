@@ -71,7 +71,7 @@ export default {
           routers:[
             {to:'/cat', text:'Inici'},
             {to:'/cat/services', text:'Serveis'},
-            {to:'/cat/blog', text:'Blog'},
+            {to:'/cat/gallery', text:'Galeria'},
             {to:'/cat/contact', text:'Contacte'},
           ]
         },
@@ -79,7 +79,7 @@ export default {
           routers:[
             {to:'/', text:'Inicio'},
             {to:'/services', text:'Servicios'},
-            {to:'/blog', text:'Blog'},
+            {to:'/gallery', text:'Galería'},
             {to:'/contact', text:'Contacto'},
           ]
         }

@@ -1,14 +1,13 @@
 ---
 lang: ca-ES
-sidebar: auto
 ---
 
-## Inici
+## Què fem?
 
-#### Recollim eixams.
-#### Extracció de colònies d'abelles
-#### Eliminació de nius de vespes
-#### Eliminació de vespa asiàtica
+- **Recollim eixams.**
+- **Extracció de colònies d'abelles**
+- **Eliminació de nius de vespes**
+- **Eliminació de vespa asiàtica**
 
 <br>
 
