@@ -7,7 +7,7 @@
           <v-row no-gutters>
             <v-col cols="12" class="d-flex justify-end align-center">
               <div>
-                <div class="d-block text-subtitle-1">639 841 851</div>
+                <div class="d-block text-subtitle-1 text-right"><v-icon small v-text="`mdi-phone-outline`"/>639 841 851</div>
                 <div class="d-block text-caption">info@podavalles.com</div>
               </div>
             </v-col>
@@ -32,7 +32,7 @@
                     <v-list-item @click="selectedLang('cat')" value="cat">
                       <v-list-item-content>
                         <v-list-item-title class="white--text">
-                          Catalá
+                          Català
                         </v-list-item-title>
                       </v-list-item-content>
                     </v-list-item>
@@ -76,7 +76,7 @@
                       </v-list-item-avatar>
                       <v-list-item-content>
                         <v-list-item-title>
-                          Catalá
+                          Català
                         </v-list-item-title>
                       </v-list-item-content>
                     </v-list-item>
@@ -86,8 +86,8 @@
             </v-col>
             <v-col cols="3" class="d-flex justify-end">
               <div>
-                <div class="d-block text-md-h5 text-lg-h4"><v-icon v-text="`mdi-phone-outline`"/> 639 841 851</div>
-                <div class="d-block title">info@podavalles.com</div>
+                <div class="d-block text-md-h5 text-lg-h5 text-right"><v-icon v-text="`mdi-phone-outline`"/>639 841 851</div>
+                <div class="d-block text-body-1 font-weight-light">info@podavalles.com</div>
               </div>
             </v-col>
           </v-row>
