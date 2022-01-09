@@ -28,7 +28,7 @@ export default {
 .banner {
   width: 100%;
   height: 300px;
-  margin-top: 70px; 
+  margin-top: 90px; 
   background-size: contain;
   background-repeat: no-repeat;
   background-image: url("/img/banner.png");
@@ -60,6 +60,7 @@ export default {
 @media (max-width: 900px) {
   .banner {
     height: 250px;
+    margin-top: 70px; 
     .content{
       margin-left: -0.6rem;
       .subtitle{

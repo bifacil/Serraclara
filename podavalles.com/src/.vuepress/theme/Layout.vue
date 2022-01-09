@@ -5,31 +5,84 @@
         <v-app-bar-nav-icon v-if="$vuetify.breakpoint.smAndDown" @click="drawer = !drawer"></v-app-bar-nav-icon>
         <v-container  fluid v-if="$vuetify.breakpoint.smAndDown">
           <v-row no-gutters>
-            <v-col cols="12" class="d-flex justify-end">
-              <v-img @click="selectedLang('')" class="mx-1" max-width="30" src="/flags/SP.png" alt="Español" style="cursor: pointer"/>
-              <v-img @click="selectedLang('cat')" class="mx-1" max-width="30" src="/flags/CAT.png" alt="Catalán" style="cursor: pointer"/>
+            <v-col cols="12" class="d-flex justify-end align-center">
+              <div>
+                <div class="d-block text-caption">639 841 851</div>
+                <div class="d-block text-caption">info@podavalles.com</div>
+              </div>
             </v-col>
             <v-divider/>
-            <v-col cols="12" v-for="(router, i) in routers" :key="i" class="d-flex justify-start">
-              <v-btn :to="router.to" text  :exact="i === 0" v-if="drawer" @click="onClickClose">
+            <template v-if="drawer">
+              <v-col cols="12" v-for="(router, i) in routers" :key="i" class="d-flex justify-start">
+                <v-btn :to="router.to" text  :exact="i === 0" @click="onClickClose">
                 {{router.text}}
-              </v-btn>
-            </v-col>
+                </v-btn>
+              </v-col>
+              <v-col cols="12">
+                <v-divider />
+                <v-list class="transparent" dense>
+                  <v-list-item-group color="green darken-4" v-model="menuLang">
+                    <v-list-item @click="selectedLang('')" value="">
+                      <v-list-item-content>
+                        <v-list-item-title class="white--text">
+                          Español
+                        </v-list-item-title>
+                      </v-list-item-content>
+                    </v-list-item>
+                    <v-list-item @click="selectedLang('cat')" value="cat">
+                      <v-list-item-content>
+                        <v-list-item-title class="white--text">
+                          Catalán
+                        </v-list-item-title>
+                      </v-list-item-content>
+                    </v-list-item>
+                  </v-list-item-group>
+                </v-list>
+              </v-col>
+            </template>
           </v-row>
         </v-container>
         <v-container fluid v-else>
           <v-row no-gutters>
-            <v-col cols="2" class="d-flex justify-start">
+            <v-col cols="2" class="d-flex justify-start align-center">
               <div class="mx-1 title text-no-wrap">PODA VALLÈS</div>
             </v-col>
-            <v-col cols="8" class="d-flex justify-center">
+            <v-col cols="8" class="d-flex justify-center align-center">
               <v-btn :to="router.to" text v-for="(router, i) in routers" :key="i" :exact="i === 0">
                 {{router.text}}
               </v-btn>
+              <v-menu bottom  open-on-hover offset-y>
+                <template v-slot:activator="{ on, attrs }">
+                  <v-btn dark v-bind="attrs" v-on="on" text>
+                    Idioma
+                    <v-icon v-text="`mdi-menu-down`" right/>
+                  </v-btn>
+                </template>
+                <v-list>
+                  <v-list-item-group color="green darken-4" v-model="menuLang">
+                    <v-list-item @click="selectedLang('')" value="">
+                      <v-list-item-content>
+                        <v-list-item-title>
+                          Español
+                        </v-list-item-title>
+                      </v-list-item-content>
+                    </v-list-item>
+                    <v-list-item @click="selectedLang('cat')" value="cat">
+                      <v-list-item-content>
+                        <v-list-item-title>
+                          Catalán
+                        </v-list-item-title>
+                      </v-list-item-content>
+                    </v-list-item>
+                  </v-list-item-group>
+                </v-list>
+              </v-menu>
             </v-col>
             <v-col cols="2" class="d-flex justify-end">
-              <v-img @click="selectedLang('')" class="mx-1" max-width="30" src="/flags/SP.png" alt="Español" style="cursor: pointer"/>
-              <v-img @click="selectedLang('cat')" class="mx-1" max-width="30" src="/flags/CAT.png" alt="Catalán" style="cursor: pointer"/>
+              <div>
+                <div class="d-block title">639 841 851</div>
+                <div class="d-block text-caption">info@podavalles.com</div>
+              </div>
             </v-col>
           </v-row>
         </v-container>
@@ -64,6 +117,7 @@ export default {
   components: { Home, Page, Sidebar },
   data() {
     return {
+      menuLang: '',
       isSidebarOpen: false,
       lang: '',
       drawer: false,
@@ -91,7 +145,7 @@ export default {
   },
   computed: {
     appBarHeight(){
-      const height =  this.$vuetify.breakpoint.smAndDown && this.drawer ? 200 : 70
+      const height =  this.$vuetify.breakpoint.smAndDown ? this.drawer ? 300 : 70 : 90
       return height
     },
     bannerHeight(){
@@ -159,12 +213,14 @@ export default {
   },
   methods: {
     selectedLang(lang){
+      this.drawer = false
       if(this.lang === lang) return
       this.lang = lang
       this.updatedPath()
       window.localStorage.setItem('lang', lang);
     },
     updatedPath(){
+      this.menuLang = this.lang
       let path = this.$route.path.replaceAll('/cat', '')
       if(this.lang === 'cat'){
         path = `/cat${path}`
