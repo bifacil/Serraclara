@@ -7,7 +7,7 @@
           <v-row no-gutters>
             <v-col cols="12" class="d-flex justify-end align-center">
               <div>
-                <div class="d-block text-caption">639 841 851</div>
+                <div class="d-block text-subtitle-1">639 841 851</div>
                 <div class="d-block text-caption">info@podavalles.com</div>
               </div>
             </v-col>
@@ -32,7 +32,7 @@
                     <v-list-item @click="selectedLang('cat')" value="cat">
                       <v-list-item-content>
                         <v-list-item-title class="white--text">
-                          Catalán
+                          Catalá
                         </v-list-item-title>
                       </v-list-item-content>
                     </v-list-item>
@@ -44,10 +44,10 @@
         </v-container>
         <v-container fluid v-else>
           <v-row no-gutters>
-            <v-col cols="2" class="d-flex justify-start align-center">
+            <v-col cols="3" class="d-flex justify-start align-center ">
               <div class="mx-1 title text-no-wrap">PODA VALLÈS</div>
             </v-col>
-            <v-col cols="8" class="d-flex justify-center align-center">
+            <v-col cols="6" class="d-flex justify-center align-center">
               <v-btn :to="router.to" text v-for="(router, i) in routers" :key="i" :exact="i === 0">
                 {{router.text}}
               </v-btn>
@@ -61,6 +61,9 @@
                 <v-list>
                   <v-list-item-group color="green darken-4" v-model="menuLang">
                     <v-list-item @click="selectedLang('')" value="">
+                      <v-list-item-avatar size="20" tile>
+                        <v-img src="/flags/SP.png"/> 
+                      </v-list-item-avatar>
                       <v-list-item-content>
                         <v-list-item-title>
                           Español
@@ -68,9 +71,12 @@
                       </v-list-item-content>
                     </v-list-item>
                     <v-list-item @click="selectedLang('cat')" value="cat">
+                      <v-list-item-avatar size="20" tile>
+                        <v-img src="/flags/CAT.png"/> 
+                      </v-list-item-avatar>
                       <v-list-item-content>
                         <v-list-item-title>
-                          Catalán
+                          Catalá
                         </v-list-item-title>
                       </v-list-item-content>
                     </v-list-item>
@@ -78,10 +84,10 @@
                 </v-list>
               </v-menu>
             </v-col>
-            <v-col cols="2" class="d-flex justify-end">
+            <v-col cols="3" class="d-flex justify-end">
               <div>
-                <div class="d-block title">639 841 851</div>
-                <div class="d-block text-caption">info@podavalles.com</div>
+                <div class="d-block text-md-h5 text-lg-h4"><v-icon v-text="`mdi-phone-outline`"/> 639 841 851</div>
+                <div class="d-block title">info@podavalles.com</div>
               </div>
             </v-col>
           </v-row>
@@ -102,6 +108,7 @@
         </template>
         <template #bottom>
           <slot name="page-bottom" />
+          <footer-app/>
         </template>
       </page>
     </div>
