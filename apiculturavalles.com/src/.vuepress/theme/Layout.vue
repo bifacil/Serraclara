@@ -2,7 +2,7 @@
   <v-app>
     <div class="theme-container" :class="pageClasses">
       <v-app-bar app dark class="yellow accent-4 black--text" :prominent="drawer" :height="appBarHeight" v-click-outside="onClickClose">
-        <v-app-bar-nav-icon v-if="$vuetify.breakpoint.smAndDown" @click="drawer = !drawer"></v-app-bar-nav-icon>
+        <v-app-bar-nav-icon v-if="$vuetify.breakpoint.smAndDown" @click="drawer = !drawer" class="black--text"></v-app-bar-nav-icon>
         <v-container  fluid v-if="$vuetify.breakpoint.smAndDown">
           <v-row no-gutters>
             <v-col cols="12" class="d-flex justify-end align-center">
@@ -65,7 +65,7 @@
                         <v-img src="/flags/SP.png"/> 
                       </v-list-item-avatar>
                       <v-list-item-content>
-                        <v-list-item-title>
+                        <v-list-item-title class="font-weight-bold black--text">
                           Español
                         </v-list-item-title>
                       </v-list-item-content>
@@ -75,7 +75,7 @@
                         <v-img src="/flags/CAT.png"/> 
                       </v-list-item-avatar>
                       <v-list-item-content>
-                        <v-list-item-title>
+                        <v-list-item-title class="font-weight-bold black--text">
                           Català
                         </v-list-item-title>
                       </v-list-item-content>
@@ -93,7 +93,7 @@
           </v-row>
         </v-container>
       </v-app-bar>
-      <banner :lang="lang" v-if="isHomePage"/>
+      <banner :lang="lang"/>
       <sidebar :items="sidebarItems" @toggle-sidebar="toggleSidebar">
         <template #top>
           <slot name="sidebar-top" />

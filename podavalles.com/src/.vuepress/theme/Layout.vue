@@ -93,7 +93,7 @@
           </v-row>
         </v-container>
       </v-app-bar>
-      <banner :lang="lang" v-if="isHomePage"/>
+      <banner :lang="lang" />
       <sidebar :items="sidebarItems" @toggle-sidebar="toggleSidebar">
         <template #top>
           <slot name="sidebar-top" />

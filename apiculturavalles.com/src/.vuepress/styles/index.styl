@@ -71,12 +71,16 @@ $colorSelect = white
   }
 
   .sidebar{
-    top: 7rem !important;
-
+    top: 25rem !important;
+    position: absolute !important;
+    z-index: 0 !important;
     .nav-link:hover, .nav-item .router-link-active{
         color $colorApp !important;
     }
 
+    a{
+      color: black !important
+    }
   }
 
   .custom-block.tip {
@@ -102,6 +106,9 @@ $colorSelect = white
         position:relative !important;
       }
     }
+    .sidebar{
+      top: 20rem !important;
+    }
   }
 
   @media (max-width: 719px){
@@ -111,9 +118,6 @@ $colorSelect = white
         margin-bottom:20px; 
         position:relative;
       }
-    }
-    .sidebar{
-      top: 4rem !important;
     }
   }
 

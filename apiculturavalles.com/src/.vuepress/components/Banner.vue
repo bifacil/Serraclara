@@ -52,6 +52,8 @@ export default {
     display: table-cell;
     vertical-align: middle;
     background-color:transparent;
+    -webkit-text-stroke: 1.5px black;
+    font-family: sans; color: white;
     .subtitle{
       margin-top: 5rem;
     }
@@ -74,6 +76,7 @@ export default {
     height: 100px;
     .content{
       margin-left: -0.9rem;
+      -webkit-text-stroke: 1px black;
       .subtitle{
         margin-top: -1rem;
       }
