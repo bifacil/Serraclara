@@ -9,8 +9,6 @@ lang: ca-ES
 - **Eliminació de nius de vespes**
 - **Eliminació de vespa asiàtica**
 
-<br>
-
 A Apicultura Vallés som especialistes en la recollida d'eixams i en l'extracció i la retirada de ruscos establerts. No importa l'alçada ni la col·locació.
  
 

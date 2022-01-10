@@ -1,40 +1,100 @@
 <template>
   <v-app>
     <div class="theme-container" :class="pageClasses">
-      <v-app-bar app class="yellow accent-4 black--text" :prominent="drawer" :height="appBarHeight" v-click-outside="onClickClose">
+      <v-app-bar app dark class="yellow accent-4 black--text" :prominent="drawer" :height="appBarHeight" v-click-outside="onClickClose">
         <v-app-bar-nav-icon v-if="$vuetify.breakpoint.smAndDown" @click="drawer = !drawer"></v-app-bar-nav-icon>
         <v-container  fluid v-if="$vuetify.breakpoint.smAndDown">
           <v-row no-gutters>
-            <v-col cols="12" class="d-flex justify-end">
-              <v-img @click="selectedLang('')" class="mx-1" max-width="30" src="/flags/SP.png" alt="Español" style="cursor: pointer"/>
-              <v-img @click="selectedLang('cat')" class="mx-1" max-width="30" src="/flags/CAT.png" alt="Catalán" style="cursor: pointer"/>
+            <v-col cols="12" class="d-flex justify-end align-center">
+              <div>
+                <div class="d-block text-subtitle-1 text-right"><v-icon small v-text="`mdi-phone-outline`" class="black--text"/>639 841 851</div>
+                <div class="d-block text-caption">info@apiculturavalles.com</div>
+              </div>
             </v-col>
             <v-divider/>
-            <v-col cols="12" v-for="(router, i) in routers" :key="i" class="d-flex justify-start">
-              <v-btn :to="router.to" text  :exact="i === 0" class="black--text" v-if="drawer" @click="onClickClose">
+            <template v-if="drawer">
+              <v-col cols="12" v-for="(router, i) in routers" :key="i" class="d-flex justify-start">
+                <v-btn :to="router.to" text  :exact="i === 0" @click="onClickClose" class="black--text">
                 {{router.text}}
-              </v-btn>
-            </v-col>
+                </v-btn>
+              </v-col>
+              <v-col cols="12">
+                <v-divider />
+                <v-list class="transparent" dense>
+                  <v-list-item-group color="yellow accent-4" v-model="menuLang">
+                    <v-list-item @click="selectedLang('')" value="">
+                      <v-list-item-content>
+                        <v-list-item-title class="black--text">
+                          Español
+                        </v-list-item-title>
+                      </v-list-item-content>
+                    </v-list-item>
+                    <v-list-item @click="selectedLang('cat')" value="cat">
+                      <v-list-item-content>
+                        <v-list-item-title class="black--text">
+                          Català
+                        </v-list-item-title>
+                      </v-list-item-content>
+                    </v-list-item>
+                  </v-list-item-group>
+                </v-list>
+              </v-col>
+            </template>
           </v-row>
         </v-container>
         <v-container fluid v-else>
           <v-row no-gutters>
-            <v-col cols="2" class="d-flex justify-start">
+            <v-col cols="3" class="d-flex justify-start align-center ">
               <div class="mx-1 title text-no-wrap">APICULTURA VALLÈS</div>
             </v-col>
-            <v-col cols="8" class="d-flex justify-center">
+            <v-col cols="6" class="d-flex justify-center align-center">
               <v-btn :to="router.to" text v-for="(router, i) in routers" :key="i" :exact="i === 0" class="black--text">
                 {{router.text}}
               </v-btn>
+              <v-menu bottom  open-on-hover offset-y>
+                <template v-slot:activator="{ on, attrs }">
+                  <v-btn dark v-bind="attrs" v-on="on" text class="black--text">
+                    Idioma
+                    <v-icon v-text="`mdi-menu-down`" right/>
+                  </v-btn>
+                </template>
+                <v-list>
+                  <v-list-item-group color="yellow accent-4" v-model="menuLang">
+                    <v-list-item @click="selectedLang('')" value="">
+                      <v-list-item-avatar size="20" tile>
+                        <v-img src="/flags/SP.png"/> 
+                      </v-list-item-avatar>
+                      <v-list-item-content>
+                        <v-list-item-title>
+                          Español
+                        </v-list-item-title>
+                      </v-list-item-content>
+                    </v-list-item>
+                    <v-list-item @click="selectedLang('cat')" value="cat">
+                      <v-list-item-avatar size="20" tile>
+                        <v-img src="/flags/CAT.png"/> 
+                      </v-list-item-avatar>
+                      <v-list-item-content>
+                        <v-list-item-title>
+                          Català
+                        </v-list-item-title>
+                      </v-list-item-content>
+                    </v-list-item>
+                  </v-list-item-group>
+                </v-list>
+              </v-menu>
             </v-col>
-            <v-col cols="2" class="d-flex justify-end">
-              <v-img @click="selectedLang('')" class="mx-1" max-width="30" src="/flags/SP.png" alt="Español" style="cursor: pointer"/>
-              <v-img @click="selectedLang('cat')" class="mx-1" max-width="30" src="/flags/CAT.png" alt="Catalán" style="cursor: pointer"/>
+            <v-col cols="3" class="d-flex justify-end">
+              <div>
+                <div class="d-block text-md-h5 text-lg-h5 text-right"><v-icon v-text="`mdi-phone-outline`" class="black--text"/>639 841 851</div>
+                <div class="d-block text-body-1 font-weight-light">info@apiculturavalles.com</div>
+              </div>
             </v-col>
           </v-row>
         </v-container>
       </v-app-bar>
-      <sidebar :items="sidebarItems" @toggle-sidebar="toggleSidebar" v-if="!$vuetify.breakpoint.smAndDown">
+      <banner :lang="lang" v-if="isHomePage"/>
+      <sidebar :items="sidebarItems" @toggle-sidebar="toggleSidebar">
         <template #top>
           <slot name="sidebar-top" />
         </template>
@@ -48,6 +108,7 @@
         </template>
         <template #bottom>
           <slot name="page-bottom" />
+          <footer-app/>
         </template>
       </page>
     </div>
@@ -63,36 +124,41 @@ export default {
   components: { Home, Page, Sidebar },
   data() {
     return {
+      menuLang: '',
       isSidebarOpen: false,
       lang: '',
       drawer: false,
       links: [
-        {root: 'cat',
-          routers:[
-            {to:'/cat', text:'Inici'},
-            {to:'/cat/services', text:'Serveis'},
-            {to:'/cat/gallery', text:'Galeria'},
-            {to:'/cat/contact', text:'Contacte'},
-          ]
-        },
         {root: '',
           routers:[
             {to:'/', text:'Inicio'},
             {to:'/services', text:'Servicios'},
             {to:'/gallery', text:'Galería'},
             {to:'/contact', text:'Contacto'},
-          ]
+          ],
+        },
+        {root: 'cat',
+          routers:[
+            {to:'/cat', text:'Inici'},
+            {to:'/cat/services', text:'Serveis'},
+            {to:'/cat/gallery', text:'Galeria'},
+            {to:'/cat/contact', text:'Contacte'},
+          ],
         }
       ]
     };
   },
   computed: {
     appBarHeight(){
-      const height =  this.$vuetify.breakpoint.smAndDown && this.drawer ? 200 : 70
+      const height =  this.$vuetify.breakpoint.smAndDown ? this.drawer ? 300 : 70 : 90
+      return height
+    },
+    bannerHeight(){
+      const height =  this.$vuetify.breakpoint.smAndDown ? 300 : 550
       return height
     },
     isHomePage(){
-      return this.$page.path === "/"
+      return this.$page.path === "/" || this.$page.path === "/cat/"
     },
     routers(){
       return this.links.find(l => l.root === this.lang).routers
@@ -149,12 +215,14 @@ export default {
   },
   methods: {
     selectedLang(lang){
+      this.drawer = false
       if(this.lang === lang) return
       this.lang = lang
       this.updatedPath()
       window.localStorage.setItem('lang', lang);
     },
     updatedPath(){
+      this.menuLang = this.lang
       let path = this.$route.path.replaceAll('/cat', '')
       if(this.lang === 'cat'){
         path = `/cat${path}`
@@ -173,3 +241,9 @@ export default {
   }
 };
 </script>
+
+<style lang="scss" scoped>
+  .banner {
+    margin-top: 70px; 
+  }
+</style>

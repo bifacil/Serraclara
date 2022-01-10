@@ -135,8 +135,7 @@ export default {
             {to:'/cat/arboriculture', text:'Arboricultura'},
             {to:'/cat/gallery', text:'Galeria'},
             {to:'/cat/contact', text:'Contacte'},
-          ],
-          banner: 'Especialistes en arbres'
+          ]
         },
         {root: '',
           routers:[
@@ -144,8 +143,7 @@ export default {
             {to:'/arboriculture', text:'Arboricultura'},
             {to:'/gallery', text:'Galería'},
             {to:'/contact', text:'Contacto'},
-          ],
-          banner: 'Especialistas en árboles'
+          ]
         }
       ]
     };
@@ -164,9 +162,6 @@ export default {
     },
     routers(){
       return this.links.find(l => l.root === this.lang).routers
-    },
-    bannerTitle(){
-      return this.links.find(l => l.root === this.lang).banner
     },
     shouldShowNavbar() {
       const { themeConfig } = this.$site;
