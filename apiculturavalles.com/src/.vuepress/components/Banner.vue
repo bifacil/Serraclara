@@ -34,7 +34,7 @@ export default {
   background-image: url("/img/banner.png");
   background-size: auto 100%;
   background-position-x: center;
-  background-color: rgb(34, 110, 188);
+  background-color: #d39916;
   margin-bottom:-6rem;
   position: relative;
   .content{
