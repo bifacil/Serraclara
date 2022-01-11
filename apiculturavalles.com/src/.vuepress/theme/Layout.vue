@@ -60,22 +60,22 @@
                 </template>
                 <v-list>
                   <v-list-item-group color="yellow accent-4" v-model="menuLang">
-                    <v-list-item @click="selectedLang('')" value="">
+                    <v-list-item @click="selectedLang('')" value="" active-class="font-weight-bold">
                       <v-list-item-avatar size="20" tile>
                         <v-img src="/flags/SP.png"/> 
                       </v-list-item-avatar>
                       <v-list-item-content>
-                        <v-list-item-title class="font-weight-bold black--text">
+                        <v-list-item-title class="black--text">
                           Español
                         </v-list-item-title>
                       </v-list-item-content>
                     </v-list-item>
-                    <v-list-item @click="selectedLang('cat')" value="cat">
+                    <v-list-item @click="selectedLang('cat')" value="cat" active-class="font-weight-bold">
                       <v-list-item-avatar size="20" tile>
                         <v-img src="/flags/CAT.png"/> 
                       </v-list-item-avatar>
                       <v-list-item-content>
-                        <v-list-item-title class="font-weight-bold black--text">
+                        <v-list-item-title class="black--text">
                           Català
                         </v-list-item-title>
                       </v-list-item-content>
