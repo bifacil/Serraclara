@@ -26,9 +26,9 @@ export default {
 </script>
 <style lang="scss" scoped>
 
-.custom-services .banner{background-image: url("/img/banner3.jpg");background-color: #b5946b;} 
-.custom-gallery .banner{background-image: url("/img/banner4.jpg");background-color: #8d9190;} 
-.custom-contact .banner{background-image: url("/img/banner5.jpg");background-color: #9daf49;} 
+.custom-services .banner{background-image: url("/img/banner3.png");background-color: #819834;} 
+.custom-contact .banner{background-image: url("/img/banner.png");background-color: #d59e23;} 
+.custom-gallery .banner{background-image: url("/img/banner5.png");background-color: #ffc928;} 
 
 .banner {
   width: 100%;
@@ -36,12 +36,10 @@ export default {
   margin-top: 90px; 
   background-size: contain;
   background-repeat: no-repeat;
-  background-image: url("/img/banner.png");
-  .custom-services {background-image: url("/img/banner3.jpg");} 
-  .custom-contact {background-image: url("/img/banner4.jpg");} 
+  background-image: url("/img/banner6.png");
   background-size: auto 100%;
   background-position-x: center;
-  background-color: #d59e23;
+  background-color: #476525;
   margin-bottom:-6rem;
   position: relative;
   .content{
