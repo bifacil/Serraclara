@@ -1,5 +1,6 @@
 ---
 lang: es-ES
+pageClass: custom-services
 ---
 
 ## Servicios
