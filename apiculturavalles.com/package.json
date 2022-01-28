@@ -18,10 +18,12 @@
     "@mdi/font": "^4.7.95",
     "node-sass": "^4.13.0",
     "sass-loader": "^8.0.0",
-    "vuetify": "^2.6.2",
-    "vuepress": "^1.5.3"
+    "vuepress": "^1.5.3",
+    "vuetify": "^2.6.2"
   },
   "dependencies": {
-    "vue": "^2.6.14"
+    "axios": "^0.25.0",
+    "vue": "^2.6.14",
+    "vuex": "^3.6.2"
   }
 }

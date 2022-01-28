@@ -94,14 +94,7 @@
         </v-container>
       </v-app-bar>
       <banner :lang="lang"/>
-      <sidebar :items="sidebarItems" @toggle-sidebar="toggleSidebar">
-        <template #top>
-          <slot name="sidebar-top" />
-        </template>
-        <template #bottom>
-          <slot name="sidebar-bottom" />
-        </template>
-      </sidebar>
+      <sidebar v-if="isShowSidebar"/>
       <page :sidebar-items="sidebarItems" class="text-justify">
         <template #top>
           <slot name="page-top" />
@@ -118,7 +111,7 @@
 <script>
 import Home from "@parent-theme/components/Home.vue";
 import Page from "@parent-theme/components/Page.vue";
-import Sidebar from "@parent-theme/components/Sidebar.vue";
+import Sidebar from "../components/Sidebar.vue";
 import { resolveSidebarItems } from "@parent-theme/util";
 export default {
   components: { Home, Page, Sidebar },
@@ -159,6 +152,12 @@ export default {
     },
     isHomePage(){
       return this.$page.path === "/" || this.$page.path === "/cat/"
+    },
+    isGalleryPage(){
+      return this.$page.path === "/gallery/" || this.$page.path === "/cat/gallery/"
+    },
+    isShowSidebar(){
+      return this.$vuetify.breakpoint.mdAndUp && this.isGalleryPage
     },
     routers(){
       return this.links.find(l => l.root === this.lang).routers
@@ -223,7 +222,7 @@ export default {
     },
     updatedPath(){
       this.menuLang = this.lang
-      let path = this.$route.path.replaceAll('/cat', '')
+      let path = this.$route.fullPath.replaceAll('/cat', '')
       if(this.lang === 'cat'){
         path = `/cat${path}`
       }
