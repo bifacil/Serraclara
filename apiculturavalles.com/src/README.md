@@ -4,9 +4,9 @@ lang: es-ES
 
 ## ¿Qué hacemos?
 
-En Apicultura Vallés somos especialistas en la recogida de enjambras y en la extracción y retirada de colmenas establecidas. No importa la altura ni la colocación.
+En Apicultura Vallés somos especialistas en la recogida de enjambres y en la extracción y retirada de colmenas establecidas. No importa la altura ni la colocación.
 
-- **Recogemos enjambras.**
+- **Recogemos enjambres.**
 - **Extracción de colonias de abejas**
 - **Eliminación de nidos de avispas**
 - **Eliminación de avispa asiática**
@@ -29,4 +29,4 @@ La cera la usamos para estampar nuestros cuadros apícolas, también para hacer 
 
 El polen no lo recolectamos porque consideramos demasiado invasivas las trampas/rejilla que se emplean para ello.
 
-Apicultura Vallés no vive de las abejas (Apis melífera), ni tiene un objetivo económico, amamos estos animales invertebrados y los consideramos importantísimos para el ecosistema por su función de polinizadores. Los dineros que obtenemos de la recogida de enjambras, la extracción de colonias, la venta de miel y propóleos es para financiar nuestro colmenar. Tenemos una larga experiencia recogiendo enjambras y actuamos de inmediato y con total eficacia y seguridad.
+Apicultura Vallés no vive de las abejas (Apis melífera), ni tiene un objetivo económico, amamos estos animales invertebrados y los consideramos importantísimos para el ecosistema por su función de polinizadores. Los dineros que obtenemos de la recogida de enjambres, la extracción de colonias, la venta de miel y propóleos es para financiar nuestro colmenar. Tenemos una larga experiencia recogiendo enjambres y actuamos de inmediato y con total eficacia y seguridad.
