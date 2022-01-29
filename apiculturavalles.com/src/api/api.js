@@ -10,7 +10,8 @@ export const GetGithubDiscussions = async () => {
       const newsQuery = `{
       repository(owner: "${owner}", name: "${name}") { 
           name, description,
-          discussions(last:100){ nodes {id, title, url, bodyHTML, createdAt, updatedAt}}
+          discussionCategories(first: 100){nodes {id,name}}, 
+          discussions(last:100, categoryId: "DIC_kwDOGn2USc4CA4wr"){ nodes {id, labels(last:10) {nodes {name} } ,category {name, id}  ,title, number,url, bodyHTML, createdAt, updatedAt}}
         }
       }`
       const headers = {
