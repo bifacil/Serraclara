@@ -15,18 +15,28 @@ export default ({
   Vue.use(Vuex);
 
   const state = {
-    DISCUSSIONS: []
+    DISCUSSIONS: [],
+    LANG: 'CAT'
   }
 
   const getters = {
     GET_DISCUSSIONS: state => {
-      return state.DISCUSSIONS
+      const discussions = []
+      state.DISCUSSIONS.map(d => d.labels.nodes.map(l => {
+        if(l.name === state.LANG){
+          discussions.push(d)
+        }
+      }));
+      return discussions
     }
   }
 
   const mutations = {
     SET_DISCUSSIONS(state, discussions){
       state.DISCUSSIONS = discussions
+    },
+    SET_LANG(state, lang){
+      state.LANG = lang !== "CAT" ? "ES" : lang
     }
   }
 

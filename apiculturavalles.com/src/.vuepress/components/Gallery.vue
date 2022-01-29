@@ -39,8 +39,8 @@
       ...mapGetters(['GET_DISCUSSIONS']),
       Discussions() {
         const discussions = this.GET_DISCUSSIONS
-        const hash = this.Hash.replaceAll('#', '')
-        return this.Hash ? discussions.filter(d => d.id === hash) : discussions
+        const hash = this.Hash.replaceAll('#apicultura-', '')
+        return this.Hash ? discussions.filter(d => d.number === Number(hash)) : discussions
       },
       Lang(){
         return this.$lang === 'es-ES' ? 'es' : 'cat'

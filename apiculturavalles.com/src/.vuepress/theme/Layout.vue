@@ -29,7 +29,7 @@
                         </v-list-item-title>
                       </v-list-item-content>
                     </v-list-item>
-                    <v-list-item @click="selectedLang('cat')" value="cat">
+                    <v-list-item @click="selectedLang('CAT')" value="CAT">
                       <v-list-item-content>
                         <v-list-item-title class="black--text">
                           Català
@@ -70,7 +70,7 @@
                         </v-list-item-title>
                       </v-list-item-content>
                     </v-list-item>
-                    <v-list-item @click="selectedLang('cat')" value="cat" active-class="font-weight-bold">
+                    <v-list-item @click="selectedLang('CAT')" value="CAT" active-class="font-weight-bold">
                       <v-list-item-avatar size="20" tile>
                         <v-img src="/flags/CAT.png"/> 
                       </v-list-item-avatar>
@@ -113,6 +113,8 @@ import Home from "@parent-theme/components/Home.vue";
 import Page from "@parent-theme/components/Page.vue";
 import Sidebar from "../components/Sidebar.vue";
 import { resolveSidebarItems } from "@parent-theme/util";
+import { mapMutations } from 'vuex'
+
 export default {
   components: { Home, Page, Sidebar },
   data() {
@@ -130,7 +132,7 @@ export default {
             {to:'/contact', text:'Contacto'},
           ],
         },
-        {root: 'cat',
+        {root: 'CAT',
           routers:[
             {to:'/cat', text:'Inici'},
             {to:'/cat/services', text:'Serveis'},
@@ -213,6 +215,7 @@ export default {
     });
   },
   methods: {
+    ...mapMutations(['SET_LANG']),
     selectedLang(lang){
       this.drawer = false
       if(this.lang === lang) return
@@ -221,9 +224,10 @@ export default {
       window.localStorage.setItem('lang', lang);
     },
     updatedPath(){
+      this.SET_LANG(this.lang)
       this.menuLang = this.lang
       let path = this.$route.fullPath.replaceAll('/cat', '')
-      if(this.lang === 'cat'){
+      if(this.lang === 'CAT'){
         path = `/cat${path}`
       }
       this.$router.replace(path)

@@ -1,8 +1,8 @@
 import axios from "axios";
+import token from "../.vuepress/token";
 
 const owner = "bifacil"
 const name = "Serraclara"
-const token = "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"
 const githubUrl = 'https://api.github.com/graphql'
 
 export const GetGithubDiscussions = async () => {
@@ -18,9 +18,7 @@ export const GetGithubDiscussions = async () => {
         "Authorization": `Bearer ${token}`,
         "Content-Type": "application/json",
       }
-      
       const response = await axios.post(githubUrl, {query: newsQuery}, {headers: headers})
-      console.log(response);
       return response.data.data
   } catch (error) {
     console.log(error)
