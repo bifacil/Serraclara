@@ -1,5 +1,6 @@
 ---
 lang: ca-ES
+sidebar: auto
 pageClass: custom-gallery
 ---
 

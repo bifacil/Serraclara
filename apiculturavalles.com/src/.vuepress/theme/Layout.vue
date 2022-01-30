@@ -94,7 +94,14 @@
         </v-container>
       </v-app-bar>
       <banner :lang="lang"/>
-      <sidebar v-if="isShowSidebar"/>
+      <sidebar>
+        <template #top>
+          <slot name="sidebar-top" />
+        </template>
+        <template #bottom>
+          <slot name="sidebar-bottom" />
+        </template>
+      </sidebar>
       <page :sidebar-items="sidebarItems" class="text-justify">
         <template #top>
           <slot name="page-top" />

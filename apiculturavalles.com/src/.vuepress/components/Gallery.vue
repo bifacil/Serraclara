@@ -1,5 +1,5 @@
 <template>
-  <v-container fluid>
+  <v-container fluid class="px-0">
     <v-row no-gutters>
       <v-col cols="12">
         <div class="d-block mb-4" v-for="Discussion in Discussions" :key="Discussion.id">
