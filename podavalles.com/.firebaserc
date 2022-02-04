@@ -1,5 +1,21 @@
 {
   "projects": {
-    "default": "podavalles-ff01d"
+    "default": "Serraclara"
+  },
+  "targets": {
+    "Serraclara": {
+      "hosting": {
+        "poda": [
+          "podavalles-com"
+        ]
+      }
+    },
+    "podavalles-ff01d": {
+      "hosting": {
+        "poda": [
+          "podavalles-com"
+        ]
+      }
+    }
   }
 }

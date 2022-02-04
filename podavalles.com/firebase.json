@@ -1,6 +1,7 @@
 {
   "hosting": {
     "public": "src\\.vuepress\\dist",
+    "target":"poda",
     "ignore": [
       "firebase.json",
       "**/.*",
