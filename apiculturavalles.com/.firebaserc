@@ -1,5 +1,14 @@
 {
   "projects": {
     "default": "apiculturavalles-ac588"
+  },
+  "targets": {
+    "apiculturavalles-ac588": {
+      "hosting": {
+        "custom": [
+          "apiculturavalles-ac588"
+        ]
+      }
+    }
   }
 }
