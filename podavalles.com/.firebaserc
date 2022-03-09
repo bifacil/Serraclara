@@ -1,18 +1,11 @@
 {
   "projects": {
-    "default": "Serraclara"
+    "poda": "apiculturavalles-ac588"
   },
   "targets": {
-    "Serraclara": {
+    "apiculturavalles-ac588": {
       "hosting": {
-        "poda": [
-          "podavalles-com"
-        ]
-      }
-    },
-    "podavalles-ff01d": {
-      "hosting": {
-        "poda": [
+        "custom": [
           "podavalles-com"
         ]
       }
