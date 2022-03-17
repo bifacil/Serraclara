@@ -15,4 +15,5 @@ Si ho prefereix pot escriure’ns a [info@podavalles.com](mailto:info@podavalles
 
 Trenallem a Collserola i a tot el Vallés.
 
-<img src="http://arboriculturavalles.com/wp-content/uploads/2018/ubicacio.jpg" alt="Podar" class="is-style-rounded">
+<img src="/img/ubicacio.jpeg" alt="Podar" class="is-style-rounded">
+

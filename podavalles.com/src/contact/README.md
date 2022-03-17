@@ -16,5 +16,5 @@ Si lo prefiere puede escribirnos en [info@podavalles.com](mailto:info@podavalles
 Trabajamos en Collserola y en toda la zona del Vallés.
 
 
+<img src="/img/ubicacio.jpeg" alt="Podar" class="is-style-rounded">
 
-<img src="http://arboriculturavalles.com/wp-content/uploads/2018/ubicacio.jpg" alt="Podar" class="is-style-rounded">
