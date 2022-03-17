@@ -227,7 +227,10 @@ export default {
       if(this.lang === 'cat'){
         path = `/cat${path}`
       }
-      this.$router.replace(path)
+      const currentRoute = window.location.pathname
+      if(currentRoute !== path){
+        this.$router.replace(path)
+      }
     },
     toggleSidebar(to) {
       this.isSidebarOpen = typeof to === "boolean" ? to : !this.isSidebarOpen;
