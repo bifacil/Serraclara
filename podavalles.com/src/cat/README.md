@@ -17,7 +17,7 @@ Som especialistes en la poda i tala controlada d’arbres, no importa l’alçad
 
 <br>
 
-![PODA VALLÈS](/img/prune-1920x1200.jpeg)
+<show-picture photo="prune-1920x1200.jpeg"/>
 
 A **Poda Vallès** ens dediquem exclusivament a l’arbre. Vàrem començar al 2010 i des de llavors no hem deixat de perfeccionar les nostres tècniques de treball. A la secció “Arboricultura” d’aquesta web hi ha una petita explicació de la visió i filosofia de la empresa. La nostre formació acadèmica en la arboricultura i el medi forestal ens ha proporcionat el coneixement biològic  (morfològic i fisiològic) i les tècniques modernes necessàries per desenvolupar la nostre professió. Som especialistes en la poda i tala controlada d’arbres, no importa l’alçada ni dificultat de l’arbre; treballem màxima seguretat i pulcritud.
 

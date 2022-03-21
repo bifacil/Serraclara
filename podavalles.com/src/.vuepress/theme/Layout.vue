@@ -2,12 +2,21 @@
   <v-app>
     <div class="theme-container" :class="pageClasses">
       <v-app-bar app dark class="green darken-4" :prominent="drawer" :height="appBarHeight" v-click-outside="onClickClose">
-        <v-app-bar-nav-icon v-if="$vuetify.breakpoint.smAndDown" @click="drawer = !drawer"></v-app-bar-nav-icon>
-        <v-container  fluid v-if="$vuetify.breakpoint.smAndDown">
+            <v-btn icon v-if="$vuetify.breakpoint.smAndDown" @click="drawer = !drawer">
+              <svg style="width:24px;height:24px" viewBox="0 0 24 24">
+                <path fill="currentColor" d="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z" />
+              </svg>
+            </v-btn>
+            <v-container  fluid v-if="$vuetify.breakpoint.smAndDown">
           <v-row no-gutters>
             <v-col cols="12" class="d-flex justify-end align-center">
               <div>
-                <div class="d-block text-subtitle-1 text-right"><v-icon small v-text="`mdi-phone-outline`"/>639 841 851</div>
+                <div class="d-block text-subtitle-1 text-right">
+                  <svg style="width:14px;height:14px" viewBox="0 0 24 24">
+                    <path fill="currentColor" d="M20,15.5C18.8,15.5 17.5,15.3 16.4,14.9C16.3,14.9 16.2,14.9 16.1,14.9C15.8,14.9 15.6,15 15.4,15.2L13.2,17.4C10.4,15.9 8,13.6 6.6,10.8L8.8,8.6C9.1,8.3 9.2,7.9 9,7.6C8.7,6.5 8.5,5.2 8.5,4C8.5,3.5 8,3 7.5,3H4C3.5,3 3,3.5 3,4C3,13.4 10.6,21 20,21C20.5,21 21,20.5 21,20V16.5C21,16 20.5,15.5 20,15.5M5,5H6.5C6.6,5.9 6.8,6.8 7,7.6L5.8,8.8C5.4,7.6 5.1,6.3 5,5M19,19C17.7,18.9 16.4,18.6 15.2,18.2L16.4,17C17.2,17.2 18.1,17.4 19,17.4V19Z" />
+                  </svg>
+                  639 841 851
+                </div>
                 <div class="d-block text-caption">info@podavalles.com</div>
               </div>
             </v-col>

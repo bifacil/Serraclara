@@ -1,5 +1,5 @@
 <template>
-  <div class="banner">
+  <v-img class="banner" src="/img/banner.png" lazy-src="/img/lazy.png">
     <v-container class="d-flex justify-start content">
       <div class="text-center font-weight-sm-bold white--text subtitle">
         <div v-if="isSpanishLang">
@@ -12,7 +12,7 @@
         </div>
       </div>
     </v-container>
-  </div>
+  </v-img>
 </template>
 <script>
 export default {
@@ -31,7 +31,6 @@ export default {
   margin-top: 90px; 
   background-size: contain;
   background-repeat: no-repeat;
-  background-image: url("/img/banner.png");
   background-size: auto 100%;
   background-position-x: center;
   background-color: rgb(34, 110, 188);
