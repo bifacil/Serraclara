@@ -1,5 +1,5 @@
 <template>
-  <v-img :src="`/img/${photo}`" lazy-src="/img/lazy.png" contain v-if="photo"/>
+  <img :src="`/img/${photo}`" v-if="photo"/>
 </template>
 
 <script>

@@ -1,108 +1,51 @@
 <template>
-  <v-app>
-    <div class="theme-container" :class="pageClasses">
-      <v-app-bar app dark class="green darken-4" :prominent="drawer" :height="appBarHeight" v-click-outside="onClickClose">
-            <v-btn icon v-if="$vuetify.breakpoint.smAndDown" @click="drawer = !drawer">
-              <svg style="width:24px;height:24px" viewBox="0 0 24 24">
-                <path fill="currentColor" d="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z" />
+  <div class="theme-container position-relative" :class="pageClasses">
+    <nav v-if="true" class="navbar fixed-bottom bg-success navbar-expand-lg navbar-dark">
+      <div class="container-fluid d-flex justify-content-between background-app">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="text-white text-end d-block d-lg-none">
+          <div class="fs-5">
+            <svg style="width:14px;height:14px" viewBox="0 0 24 24">
+              <path fill="currentColor" d="M20,15.5C18.8,15.5 17.5,15.3 16.4,14.9C16.3,14.9 16.2,14.9 16.1,14.9C15.8,14.9 15.6,15 15.4,15.2L13.2,17.4C10.4,15.9 8,13.6 6.6,10.8L8.8,8.6C9.1,8.3 9.2,7.9 9,7.6C8.7,6.5 8.5,5.2 8.5,4C8.5,3.5 8,3 7.5,3H4C3.5,3 3,3.5 3,4C3,13.4 10.6,21 20,21C20.5,21 21,20.5 21,20V16.5C21,16 20.5,15.5 20,15.5M5,5H6.5C6.6,5.9 6.8,6.8 7,7.6L5.8,8.8C5.4,7.6 5.1,6.3 5,5M19,19C17.7,18.9 16.4,18.6 15.2,18.2L16.4,17C17.2,17.2 18.1,17.4 19,17.4V19Z" />
+            </svg>
+            639 841 851
+          </div>
+          <div class="d-block text-caption">info@podavalles.com</div>
+        </div>
+        <div class="collapse navbar-collapse justify-content-between" id="navbarScroll">
+          <div class="mx-1 title text-no-wrap text-white fs-5 d-none d-lg-block">PODA VALLÈS</div>
+          <ul class="nav justify-center">
+            <li class="nav-item nav-link text-uppercase" v-for="(router, i) in routers" :key="i">
+              <router-link :to="router.to" exact>
+                <span class="text-white">{{router.text}}</span>
+              </router-link>
+            </li>
+            <div class="dropdown">
+              <a class="nav-link dropdown-toggle text-white" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                IDIOMA
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                <li aria-current="true" class="btn d-flex nav-link  list-group-item stretched-link" :class="menuLang === '' ? 'bg-success' : ''" @click="selectedLang('')"><img src="/flags/SP.png"><a class="dropdown-item" :class="menuLang === '' ? 'text-white' : ''">Español</a></li>
+                <li aria-current="true" class="btn d-flex nav-link btn-light list-group-item stretched-link" :class="menuLang === 'cat' ? 'bg-success' : ''" @click="selectedLang('cat')"><img src="/flags/CAT.png"><a class="dropdown-item" :class="menuLang === 'cat' ? 'text-white' : ''">Català</a></li>
+              </ul>
+            </div>
+          </ul>
+          <div class="text-white text-end d-none d-lg-block">
+            <div class="fs-5">
+              <svg style="width:14px;height:14px" viewBox="0 0 24 24">
+                <path fill="currentColor" d="M20,15.5C18.8,15.5 17.5,15.3 16.4,14.9C16.3,14.9 16.2,14.9 16.1,14.9C15.8,14.9 15.6,15 15.4,15.2L13.2,17.4C10.4,15.9 8,13.6 6.6,10.8L8.8,8.6C9.1,8.3 9.2,7.9 9,7.6C8.7,6.5 8.5,5.2 8.5,4C8.5,3.5 8,3 7.5,3H4C3.5,3 3,3.5 3,4C3,13.4 10.6,21 20,21C20.5,21 21,20.5 21,20V16.5C21,16 20.5,15.5 20,15.5M5,5H6.5C6.6,5.9 6.8,6.8 7,7.6L5.8,8.8C5.4,7.6 5.1,6.3 5,5M19,19C17.7,18.9 16.4,18.6 15.2,18.2L16.4,17C17.2,17.2 18.1,17.4 19,17.4V19Z" />
               </svg>
-            </v-btn>
-            <v-container  fluid v-if="$vuetify.breakpoint.smAndDown">
-          <v-row no-gutters>
-            <v-col cols="12" class="d-flex justify-end align-center">
-              <div>
-                <div class="d-block text-subtitle-1 text-right">
-                  <svg style="width:14px;height:14px" viewBox="0 0 24 24">
-                    <path fill="currentColor" d="M20,15.5C18.8,15.5 17.5,15.3 16.4,14.9C16.3,14.9 16.2,14.9 16.1,14.9C15.8,14.9 15.6,15 15.4,15.2L13.2,17.4C10.4,15.9 8,13.6 6.6,10.8L8.8,8.6C9.1,8.3 9.2,7.9 9,7.6C8.7,6.5 8.5,5.2 8.5,4C8.5,3.5 8,3 7.5,3H4C3.5,3 3,3.5 3,4C3,13.4 10.6,21 20,21C20.5,21 21,20.5 21,20V16.5C21,16 20.5,15.5 20,15.5M5,5H6.5C6.6,5.9 6.8,6.8 7,7.6L5.8,8.8C5.4,7.6 5.1,6.3 5,5M19,19C17.7,18.9 16.4,18.6 15.2,18.2L16.4,17C17.2,17.2 18.1,17.4 19,17.4V19Z" />
-                  </svg>
-                  639 841 851
-                </div>
-                <div class="d-block text-caption">info@podavalles.com</div>
-              </div>
-            </v-col>
-            <v-divider/>
-            <template v-if="drawer">
-              <v-col cols="12" v-for="(router, i) in routers" :key="i" class="d-flex justify-start">
-                <v-btn :to="router.to" text  :exact="i === 0" @click="onClickClose">
-                {{router.text}}
-                </v-btn>
-              </v-col>
-              <v-col cols="12">
-                <v-divider />
-                <v-list class="transparent" dense>
-                  <v-list-item-group color="green darken-4" v-model="menuLang">
-                    <v-list-item @click="selectedLang('')" value="">
-                      <v-list-item-content>
-                        <v-list-item-title class="white--text">
-                          Español
-                        </v-list-item-title>
-                      </v-list-item-content>
-                    </v-list-item>
-                    <v-list-item @click="selectedLang('cat')" value="cat">
-                      <v-list-item-content>
-                        <v-list-item-title class="white--text">
-                          Català
-                        </v-list-item-title>
-                      </v-list-item-content>
-                    </v-list-item>
-                  </v-list-item-group>
-                </v-list>
-              </v-col>
-            </template>
-          </v-row>
-        </v-container>
-        <v-container fluid v-else>
-          <v-row no-gutters>
-            <v-col cols="3" class="d-flex justify-start align-center ">
-              <div class="mx-1 title text-no-wrap">PODA VALLÈS</div>
-            </v-col>
-            <v-col cols="6" class="d-flex justify-center align-center">
-              <v-btn :to="router.to" text v-for="(router, i) in routers" :key="i" :exact="i === 0">
-                {{router.text}}
-              </v-btn>
-              <v-menu bottom  open-on-hover offset-y>
-                <template v-slot:activator="{ on, attrs }">
-                  <v-btn dark v-bind="attrs" v-on="on" text>
-                    Idioma
-                    <v-icon v-text="`mdi-menu-down`" right/>
-                  </v-btn>
-                </template>
-                <v-list>
-                  <v-list-item-group color="green darken-4" v-model="menuLang">
-                    <v-list-item @click="selectedLang('')" value="">
-                      <v-list-item-avatar size="20" tile>
-                        <v-img src="/flags/SP.png"/> 
-                      </v-list-item-avatar>
-                      <v-list-item-content>
-                        <v-list-item-title>
-                          Español
-                        </v-list-item-title>
-                      </v-list-item-content>
-                    </v-list-item>
-                    <v-list-item @click="selectedLang('cat')" value="cat">
-                      <v-list-item-avatar size="20" tile>
-                        <v-img src="/flags/CAT.png"/> 
-                      </v-list-item-avatar>
-                      <v-list-item-content>
-                        <v-list-item-title>
-                          Català
-                        </v-list-item-title>
-                      </v-list-item-content>
-                    </v-list-item>
-                  </v-list-item-group>
-                </v-list>
-              </v-menu>
-            </v-col>
-            <v-col cols="3" class="d-flex justify-end">
-              <div>
-                <div class="d-block text-md-h5 text-lg-h5 text-right"><v-icon v-text="`mdi-phone-outline`"/>639 841 851</div>
-                <div class="d-block text-body-1 font-weight-light">info@podavalles.com</div>
-              </div>
-            </v-col>
-          </v-row>
-        </v-container>
-      </v-app-bar>
-      <banner :lang="lang" />
+              639 841 851
+            </div>
+            <div class="d-block text-caption">info@podavalles.com</div>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <div class="facts mt-5 pt-2 pt-sm-3 pt-md-4 pt-lg-4">
+      <banner :lang="lang" class="banner"/>
       <sidebar :items="sidebarItems" @toggle-sidebar="toggleSidebar">
         <template #top>
           <slot name="sidebar-top" />
@@ -111,7 +54,7 @@
           <slot name="sidebar-bottom" />
         </template>
       </sidebar>
-      <page :sidebar-items="sidebarItems" class="text-justify">
+      <page :sidebar-items="sidebarItems">
         <template #top>
           <slot name="page-top" />
         </template>
@@ -121,7 +64,7 @@
         </template>
       </page>
     </div>
-  </v-app> 
+  </div>
 </template>
 
 <script>
@@ -224,6 +167,7 @@ export default {
   },
   methods: {
     selectedLang(lang){
+      this.menuLang = lang
       this.drawer = false
       if(this.lang === lang) return
       this.lang = lang
@@ -249,13 +193,10 @@ export default {
       if(this.drawer){
         this.drawer = false
       }
+    },
+    to(to){
+      this.$router.push(to)
     }
   }
 };
 </script>
-
-<style lang="scss" scoped>
-  .banner {
-    margin-top: 70px; 
-  }
-</style>
