@@ -1,0 +1,27 @@
+﻿{
+  "/cat/": [
+    {
+      "title": null,
+      "collapsable": false,
+      "path": "/cat/",
+      "type": "group",
+      "children": [
+        {
+          "title": null,
+          "collapsable": false,
+          "path": "/cat/contact/"
+        },
+        {
+          "title": null,
+          "collapsable": false,
+          "path": "/cat/gallery/"
+        },
+        {
+          "title": null,
+          "collapsable": false,
+          "path": "/cat/services/"
+        }
+      ]
+    }
+  ]
+}
