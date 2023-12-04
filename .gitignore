@@ -9,5 +9,3 @@ run
 .nyc_output
 .basement
 config.local.js
-basement_dist
-/apiculturavalles.com/**/token.js
